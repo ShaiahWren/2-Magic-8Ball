@@ -7,7 +7,14 @@ import styled from 'styled-components';
 const Title = styled.h1`
     color: #efefef;
     font-size: 3rem;
+
+    .p {
+        height: 6px;
+        width: 12px;
+        color: #efefef;
+    }
 `;
+
 
 
 
@@ -31,13 +38,13 @@ const EightBall = props => {
 
     return (
         <>  
-            <Title>Magic Eight Ball</Title>
+            <Title>Magic-8Ball</Title>
             <form onSubmit={(event) => _handleSubmit(event)}>
                 <label>
-                    What is your question?
-                    <input type="text" value={question} onChange={(event => _handleChange(event.target.value))} />
+                    <p>Always trust a Magic-8Ball with important life questions</p>
+                    <p className="input"><input type="text" value={question} onChange={(event => _handleChange(event.target.value))} /></p>
                 </label>
-                <button type="submit">Ask the Magic 8 Ball</button>
+                <button type="submit"><p>Get an answer</p></button>
                 
             </form>
             {!!answer ? <Answer answer={answer} />
